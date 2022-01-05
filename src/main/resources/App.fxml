@@ -39,8 +39,8 @@
             <ListView fx:id="listView" layoutX="20.0" layoutY="275.0" prefHeight="180.0" prefWidth="175.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <Button fx:id="generateImage" layoutX="66.0" layoutY="471.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="200.0" text="Generate Image" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <Button fx:id="restoreOriginalImage" layoutX="20.0" layoutY="516.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="200.0" text="Restore Original Image" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <RadioButton fx:id="originalImageRadio" disable="true" layoutX="77.0" layoutY="577.0" mnemonicParsing="false" selected="true" text="Original Image" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <RadioButton fx:id="modifiedImageRadio" disable="true" layoutX="77.0" layoutY="606.0" mnemonicParsing="false" text="Modified Image" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <RadioButton fx:id="originalImageRadio1" disable="true" layoutX="77.0" layoutY="577.0" mnemonicParsing="false" selected="true" text="Original Image" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <RadioButton fx:id="modifiedImageRadio2" disable="true" layoutX="77.0" layoutY="606.0" mnemonicParsing="false" text="Modified Image" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
          </children>
       </AnchorPane>
    </children>
