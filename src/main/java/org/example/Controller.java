@@ -23,6 +23,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import static javafx.embed.swing.SwingFXUtils.fromFXImage;
+import static javafx.embed.swing.SwingFXUtils.toFXImage;
 
 public class Controller implements Initializable{
 
@@ -66,12 +67,12 @@ public class Controller implements Initializable{
         fileChooser.getExtensionFilters().add(extFilter);
         try {
             File file = fileChooser.showSaveDialog(mainWindow);
-            BufferedImage bImage = ImageIO.read((ImageInputStream) image);
-            if (bImage != null) {
-                ImageIO.write(bImage, "png", file);
-            }
+            //BufferedImage bImage = ImageIO.read((ImageInputStream) );
+            //if (bImage != null) {
+                ImageIO.write(fromFXImage(image, null), "png", file);
+          //  }
         } catch (Exception exception) {
-            System.out.println(exception.getStackTrace());
+            exception.printStackTrace();
         }
     }
 
