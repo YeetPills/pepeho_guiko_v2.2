@@ -24,7 +24,7 @@ public class App extends Application {
         stage.setScene(scene);
         stage.show();
         stage.setMinWidth(1000);
-        stage.setMinHeight(680);
+        stage.setMinHeight(650);
         } catch (java.io.IOException e){
             System.out.println(e);
         }
