@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
@@ -29,6 +30,7 @@ public class Controller implements Initializable{
 
     public File selectedFile;
     public Image image;
+    public Image modifiedImage;
     @FXML
     public Button selectImage;
     public Button editMatrix;
@@ -53,6 +55,7 @@ public class Controller implements Initializable{
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Image files (*.png, *.jpg)", "*.png", "*-jpg");
         fileChooser.getExtensionFilters().add(extFilter);
         selectedFile = fileChooser.showOpenDialog(mainWindow);
+        originalImageRadio1.setDisable(true);
 
         image = new Image("file:" + selectedFile.getAbsolutePath(), true);
         imageView.setImage(image);
@@ -85,8 +88,9 @@ public class Controller implements Initializable{
             }
         }
 
-            imageView.setImage(getJavaFXImage(bImage));
-            image = getJavaFXImage(bImage);
+        imageView.setImage(getJavaFXImage(bImage));
+        image = getJavaFXImage(bImage);
+        originalImageRadio1.setDisable(false);
     }
 
     public Image getJavaFXImage(BufferedImage bImage) {
@@ -116,14 +120,36 @@ public class Controller implements Initializable{
                 }
             }
             imageView.setImage(getJavaFXImage(currentImage));
-            image = getJavaFXImage(currentImage);
+            modifiedImage = getJavaFXImage(currentImage);
+            modifiedImageRadio2.setDisable(false);
+            modifiedImageRadio2.setSelected(true);
+            originalImageRadio1.setSelected(false);
+
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
     }
 
-
     public void close() {
         System.exit(0);
+    }
+
+    public void showOriginal(ActionEvent actionEvent) {
+        modifiedImageRadio2.setSelected(false);
+        imageView.setImage(image);
+    }
+
+    public void showModified(ActionEvent actionEvent) {
+        originalImageRadio1.setSelected(false);
+        imageView.setImage(modifiedImage);
+    }
+
+    public void showAbout(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("About");
+        alert.setHeaderText("this is a GUI thing");
+        alert.setContentText("it does some stuff like loading and saving images and applies a negative filter");
+
+        alert.showAndWait();
     }
 }

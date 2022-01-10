@@ -6,9 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="calculator" />
         <module name="pepeho_guiko_v2" />
         <module name="untitled" />
-        <module name="calculator" />
       </profile>
     </annotationProcessing>
   </component>

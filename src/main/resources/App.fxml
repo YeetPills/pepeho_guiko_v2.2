@@ -26,7 +26,7 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#showAbout" text="About" />
             </items>
           </Menu>
         </menus>
@@ -36,12 +36,12 @@
             <Button fx:id="selectImage" layoutX="90.0" layoutY="36.0" mnemonicParsing="false" onAction="#selectFile" prefHeight="25.0" prefWidth="108.0" text="Select Image" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <Button fx:id="editMatrix" layoutX="50.0" layoutY="70.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="108.0" text="Edit Matrix" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <Canvas fx:id="canvas" height="122.0" layoutY="108.0" width="200.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <Button fx:id="applyMatrixFilter" layoutX="66.0" layoutY="242.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="108.0" text="Apply Matrix Filter" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" onAction="#applyNegativeFilter" />
+            <Button fx:id="applyMatrixFilter" layoutX="66.0" layoutY="242.0" mnemonicParsing="false" onAction="#applyNegativeFilter" prefHeight="25.0" prefWidth="108.0" text="Apply Matrix Filter" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <ListView fx:id="listView" layoutX="20.0" layoutY="275.0" prefHeight="180.0" prefWidth="175.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <Button fx:id="generateImage" layoutX="66.0" layoutY="471.0" mnemonicParsing="false" onAction="#generateImage" prefHeight="36.0" prefWidth="200.0" text="Generate Image" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <Button fx:id="restoreOriginalImage" layoutX="20.0" layoutY="516.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="200.0" text="Restore Original Image" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <RadioButton fx:id="originalImageRadio1" disable="true" layoutX="77.0" layoutY="577.0" mnemonicParsing="false" selected="true" text="Original Image" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <RadioButton fx:id="modifiedImageRadio2" disable="true" layoutX="77.0" layoutY="606.0" mnemonicParsing="false" text="Modified Image" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <RadioButton fx:id="originalImageRadio1" disable="true" layoutX="77.0" layoutY="577.0" mnemonicParsing="false" onAction="#showOriginal" selected="true" text="Original Image" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <RadioButton fx:id="modifiedImageRadio2" disable="true" layoutX="77.0" layoutY="606.0" mnemonicParsing="false" onAction="#showModified" text="Modified Image" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
          </children>
       </AnchorPane>
       <ImageView fx:id="imageView" fitHeight="593.0" fitWidth="741.0" layoutX="14.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="248.0" AnchorPane.topAnchor="36.0" />
